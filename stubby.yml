@@ -1,0 +1,10 @@
+### Get workflow definition ###
+- request:
+    method: POST
+    url: ^/pay
+  response:
+    status: 200
+    headers:
+      content-type: application/json
+    body: >
+      {"status":"SUCCESS"}
