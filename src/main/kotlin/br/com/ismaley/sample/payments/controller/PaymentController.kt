@@ -29,6 +29,11 @@ class PaymentController(private val service : PaymentService) {
         return Mapper.toDTO(service.createPaymentMethod(Mapper.toModel(request)))
     }
 
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    fun listPaymentMethods(): List<PaymentMethodDTO> =
+        Mapper.toDTOList(service.listPaymentMethods())
+
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     fun getPaymentMethod(@PathVariable id: String): PaymentMethodDTO {
