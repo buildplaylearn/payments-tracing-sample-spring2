@@ -16,6 +16,9 @@ class PaymentService(private val repository: PaymentRepository,
 
     fun getPaymentMethod(id: String): PaymentMethod = findOrFail(id)
 
+    fun listPaymentMethods(): List<PaymentMethod> =
+        repository.findAll()
+
     fun pay(id: String, cvv: Int): String = findOrFail(id).let { client.pay(it.cardNumber!!, cvv)!! }
 
     fun updatePaymentMethod(id: String, request: PaymentMethodUpdateRequest): PaymentMethod =

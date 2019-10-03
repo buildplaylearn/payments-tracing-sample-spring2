@@ -16,6 +16,10 @@ class Mapper {
             month = paymentMethodRequest.month
         )
 
+        fun toDTOList(paymentMethodList: List<PaymentMethod>): List<PaymentMethodDTO> {
+            return paymentMethodList.map { toDTO(it) }
+        }
+
         fun toDTO(paymentMethod: PaymentMethod) = PaymentMethodDTO(
             paymentMethodId = paymentMethod.id!!,
             customerId = paymentMethod.customerId!!,
