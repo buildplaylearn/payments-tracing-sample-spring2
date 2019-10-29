@@ -1,8 +1,8 @@
 package br.com.ismaley.sample.payments.dto
 
 import org.hibernate.validator.constraints.CreditCardNumber
-import org.hibernate.validator.constraints.NotEmpty
 import org.hibernate.validator.constraints.Range
+import javax.validation.constraints.NotEmpty
 import javax.validation.constraints.Pattern
 
 data class PaymentMethodRequest(@NotEmpty val name: String,
