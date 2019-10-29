@@ -25,6 +25,13 @@ dependencies {
 	implementation( "com.h2database", "h2", "1.4.199")
 	implementation( "io.github.microutils", "kotlin-logging", "1.6.10")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0")
+	testImplementation("org.junit.jupiter:junit-jupiter-api:5.3.1")
+	testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.3.1")
+}
+
+tasks.test {
+	useJUnitPlatform()
 }
 
 tasks.withType<KotlinCompile> {
